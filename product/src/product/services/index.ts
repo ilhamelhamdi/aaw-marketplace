@@ -1,0 +1,7 @@
+export * from './getAllProducts.service'
+export * from './getManyProductDatasById.service'
+export * from './getProductById.service'
+export * from './getProductByCategory.service'
+export * from './createProduct.service'
+export * from './editProduct.service'
+export * from './deleteProduct.service'
