@@ -1,6 +1,6 @@
 import { InternalServerErrorResponse, NotFoundResponse } from "@src/shared/commons/patterns"
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 import { getUserByUsername } from "./auth/dao/getUserByUsername.dao";
 import { NewUser, User } from "@db/schema/auth/users";

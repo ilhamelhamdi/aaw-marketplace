@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs';
 import { NewUser } from '@db/schema/auth/users';
 import { insertNewUser } from '../dao/insertNewUser.dao';
 import { InternalServerErrorResponse } from '@src/shared/commons/patterns';

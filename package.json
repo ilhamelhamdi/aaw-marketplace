@@ -5,7 +5,7 @@
   "main": "src/server.ts",
   "scripts": {
     "start": "node dist/server.js",
-    "dev": "nodemon --watch src --ext ts --exec ts-node src/server.ts",
+    "dev": "nodemon --watch src --ext ts --exec node --inspect -r ts-node/register src/server.ts",
     "build": "tsc && tsc-alias",
     "generate": "drizzle-kit generate:pg",
     "migrate": "tsx src/db/migrate.ts",
@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^1.6.7",
     "bcrypt": "^5.1.1",
+    "bcryptjs": "^3.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.2",
@@ -42,5 +43,10 @@
     "tsconfig-paths": "^4.2.0",
     "tsx": "^4.7.1",
     "typescript": "^5.3.3"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "bcrypt"
+    ]
   }
 }

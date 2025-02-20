@@ -3,6 +3,7 @@ import { BadRequestResponse, InternalServerErrorResponse, NotFoundResponse } fro
 import { createOrder } from "../dao/createOrder.dao";
 import axios, { AxiosResponse } from "axios";
 import { User, Product } from "@src/shared/types";
+import { getManyProductDatasByIdService } from "@src/product/services";
 
 export const placeOrderService = async (
     user: User,
@@ -30,7 +31,7 @@ export const placeOrderService = async (
         if (productIds.length === 0) {
             return new BadRequestResponse('Cart is empty').generate();
         }
-        const products: AxiosResponse<Product[], any> = await axios.post(`${process.env.PRODUCT_MS_URL}/product/many`, { productIds });
+        const products = await getManyProductDatasByIdService(productIds);
         if (products.status !== 200) {
             return new InternalServerErrorResponse("Failed to get products").generate();
         }
@@ -40,7 +41,7 @@ export const placeOrderService = async (
             SERVER_TENANT_ID,
             user.id,
             cartItems,
-            products.data,
+            products.data as Product[],
             shipping_provider as 'JNE' | 'TIKI' | 'SICEPAT' | 'GOSEND' | 'GRAB_EXPRESS',
         );
 

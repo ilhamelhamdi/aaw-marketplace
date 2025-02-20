@@ -11,5 +11,5 @@ export const getWishlistDetailByWishlistId = async (
                     .where(and(
                         eq(schema.wishlistDetail.wishlist_id, wishlist_id)
                     ))
-    return result?.[0];
+    return result;
 }
