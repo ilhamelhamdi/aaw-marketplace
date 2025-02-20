@@ -1,4 +1,4 @@
-FROM node:18.18.2 AS builder
+FROM node:23 AS builder
 
 WORKDIR /marketplace
 
@@ -17,7 +17,7 @@ COPY . .
 RUN pnpm run build
 
 # Production image
-FROM node:18.18.2-slim
+FROM node:23-alpine
 
 ENV PORT 8000
 ENV NODE_ENV production
@@ -26,9 +26,16 @@ WORKDIR /marketplace
 
 COPY --from=builder /marketplace/dist ./dist
 COPY --from=builder /marketplace/package.json ./package.json
+COPY --from=builder /marketplace/drizzle ./drizzle 
+COPY --from=builder /marketplace/entrypoint.sh ./entrypoint.sh
 
-RUN npm install --only=production
+RUN npm install -g pnpm
+RUN pnpm install --prod
+
+# Make the entrypoint script executable
+RUN chmod +x ./entrypoint.sh
 
 EXPOSE 8000
 
-CMD ["node", "dist/src/server.js"]
+# Use the entrypoint script to run migrations and start the app
+ENTRYPOINT ["./entrypoint.sh"]
