@@ -1,0 +1,6 @@
+export * from './getProductById.schema'
+export * from './getManyProductDatasById.schema'
+export * from './getProductByCategory.schema'
+export * from './createProduct.schema'
+export * from './deleteProduct.schema'
+export * from './editProduct.schema'

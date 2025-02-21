@@ -1,31 +1,179 @@
 version: '3.8'
 
 services:
-  marketplace:
-    build: .
+  # Authentication Service
+  auth-service:
+    build: ./authentication
     ports:
-      - "8000:8000"
+      - "8001:8000"
+    env_file: .env
     environment:
-      - TENANT_ID=47dd6b24-0b23-46b0-a662-776158d089ba
-      - JWT_SECRET=auth_ms_jwt_secret
-      - DB_HOST=db
+      - DB_HOST=db-auth
       - DB_PORT=5432
       - DB_USER=postgres
       - DB_PASSWORD=postgres
-      - DB_NAME=marketplace
+      - DB_NAME=auth
     depends_on:
-      - db
+      db-auth:
+        condition: service_healthy
+    command: ["./wait-for-it.sh", "db-auth:5432", "--", "./entrypoint.sh"]
 
-  db:
+  db-auth:
     image: postgres:latest
     environment:
-      POSTGRES_DB: marketplace
+      POSTGRES_DB: auth
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - "9001:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data_auth:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d auth"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Product Service
+  product-service:
+    build: ./product
+    ports:
+      - "8002:8000"
+    env_file: .env
+    environment:
+      - DB_HOST=db-product
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=product
+      - AUTH_MS_URL=http://auth-service:8000
+      - TENANT_MS_URL=http://tenant-service:8000
+    depends_on:
+      db-product:
+        condition: service_healthy
+    command: ["./wait-for-it.sh", "db-product:5432", "--", "./entrypoint.sh"]
+
+  db-product:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: product
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "9003:5432"
+    volumes:
+      - postgres_data_product:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d product"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Tenant Service
+  tenant-service:
+    build: ./tenant
+    ports:
+      - "8003:8000"
+    env_file: .env
+    environment:
+      - DB_HOST=db-tenant
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=tenant
+      - AUTH_MS_URL=http://auth-service:8000
+    depends_on:
+      db-tenant:
+        condition: service_healthy
+    command: ["./wait-for-it.sh", "db-tenant:5432", "--", "./entrypoint.sh"]
+
+  db-tenant:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: tenant
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "9004:5432"
+    volumes:
+      - postgres_data_tenant:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d tenant"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # Orders Service
+  orders-service:
+    build: ./orders
+    ports:
+      - "8004:8000"
+    env_file: .env
+    environment:
+      - DB_HOST=db-orders
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=orders
+      - PRODUCT_MS_URL=http://product-service:8000
+    depends_on:
+      db-orders:
+        condition: service_healthy
+    command: ["./wait-for-it.sh", "db-orders:5432", "--", "./entrypoint.sh"]
+
+  db-orders:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: orders
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "9002:5432"
+    volumes:
+      - postgres_data_orders:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d orders"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+
+  # Wishlist Service
+  wishlist-service:
+    build: ./wishlist
+    ports:
+      - "8005:8000"
+    env_file: .env
+    environment:
+      - DB_HOST=db-wishlist
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_NAME=wishlist
+    depends_on:
+      db-wishlist:
+        condition: service_healthy
+    command: ["./wait-for-it.sh", "db-wishlist:5432", "--", "./entrypoint.sh"]
+
+  db-wishlist:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: wishlist
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "9005:5432"
+    volumes:
+      - postgres_data_wishlist:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d wishlist"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
-  postgres_data:
+  postgres_data_auth:
+  postgres_data_orders:
+  postgres_data_product:
+  postgres_data_tenant:
+  postgres_data_wishlist:

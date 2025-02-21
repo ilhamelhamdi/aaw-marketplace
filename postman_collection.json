@@ -1,0 +1,2137 @@
+{
+	"info": {
+		"_postman_id": "19c7d9e0-ee2a-44c3-ab0b-928a7c864a2c",
+		"name": "AAW - Tugas",
+		"description": "Tugas 1 Arsitektur Aplikasi Web\n\nNama : Ilham Abdillah Alhamdi\n\nNPM : 2206081194",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30769450",
+		"_collection_link": "https://restless-station-193734.postman.co/workspace/My-Workspace~af1efa27-8d7f-49e2-89c4-940758449cff/collection/30769450-19c7d9e0-ee2a-44c3-ab0b-928a7c864a2c?action=share&source=collection_link&creator=30769450"
+	},
+	"item": [
+		{
+			"name": "Monolith",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login Admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();\r",
+											"if (response[\"token\"]) {\r",
+											"    pm.collectionVariables.set(\"token\", response[\"token\"]);\r",
+											"    console.log(\"JWT Token saved as collection variable:\", response[\"token\"]);\r",
+											"} else {\r",
+											"    pm.test(\"JWT Token not found in response\", function () {\r",
+											"        pm.expect(response[\"token\"]).to.exist;\r",
+											"    });\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/auth/login",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();\r",
+											"if (response[\"token\"]) {\r",
+											"    pm.collectionVariables.set(\"token\", response[\"token\"]);\r",
+											"    console.log(\"JWT Token saved as collection variable:\", response[\"token\"]);\r",
+											"} else {\r",
+											"    pm.test(\"JWT Token not found in response\", function () {\r",
+											"        pm.expect(response[\"token\"]).to.exist;\r",
+											"    });\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"elhamdi12\",\r\n    \"password\": \"Elhamdi12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/auth/login",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"elhamdi12\",\r\n    \"email\": \"elhamdi12@gmail.com\",\r\n    \"password\": \"Elhamdi12\",\r\n    \"full_name\": \"Ilham Abdillah Alhamdi\",\r\n    \"address\": \"Blablabla\",\r\n    \"phone_number\": \"081234567890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/auth/register",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"elhamdi12\",\r\n    \"email\": \"elhamdi12@gmail.com\",\r\n    \"password\": \"Elhamdi12\",\r\n    \"full_name\": \"Ilham Abdillah Alhamdi\",\r\n    \"address\": \"Blablabla\",\r\n    \"phone_number\": \"081234567890\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/auth/register",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "189"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"bd-Paxqyvvc6x0t7CvoEbpPldoMYMw\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Feb 2025 06:29:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"e6c8e9a0-c188-4adb-9048-bc932866b404\",\n        \"username\": \"elhamdi12\",\n        \"email\": \"elhamdi12@gmail.com\",\n        \"full_name\": \"Ilham Abdillah Alhamdi\",\n        \"address\": \"Blablabla\",\n        \"phone_number\": \"081234567890\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Verify Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU2YzhlOWEwLWMxODgtNGFkYi05MDQ4LWJjOTMyODY2YjQwNCIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTczOTg2MDE5NiwiZXhwIjoxNzM5OTQ2NTk2fQ.5qdsU6mgOSBXwknJ7awcDYG1-pspb_Qii-gtv-QWnME\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/auth/verify-token",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"verify-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify Admin Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUzZjRhNWViLTMzMTUtNDEzYy04ZGFlLWQ0ODdjOGQ4NmM0ZCIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTczOTk0MDIwNywiZXhwIjoxNzQwMDI2NjA3fQ.jtOSryHu14TxrXffxDEgp6A8iG-C88w0Wo0Vfg7vWYw\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/auth/verify-admin-token",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"verify-admin-token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Product",
+							"item": [
+								{
+									"name": "Get Products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/product/",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Product By Id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/product/e6c8e9a0-c188-4adb-9048-bc932866b404",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"e6c8e9a0-c188-4adb-9048-bc932866b404"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Products By Category",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/product/category/e6c8e9a0-c188-4adb-9048-bc932866b404",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"category",
+												"e6c8e9a0-c188-4adb-9048-bc932866b404"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Product By Ids",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"productIds\": [\"e6c8e9a0-c188-4adb-9048-bc932866b404\"]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/product/many",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"many"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Product",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24 with 12 RAM\",\r\n    \"price\": 24000000,\r\n    \"quantity_available\": 134,\r\n    \"category_id\": \"cc9b24c5-8d8e-4d27-87a3-e0506fca1045\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/product",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Product",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24 with 12 RAM\",\r\n    \"price\": 24000000,\r\n    \"quantity_available\": 134,\r\n    \"category_id\": \"cc9b24c5-8d8e-4d27-87a3-e0506fca1045\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/product/2505f08a-1350-4e2a-b1dd-1dec3765248b",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"2505f08a-1350-4e2a-b1dd-1dec3765248b"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Product",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/product/3ce5aa36-f93a-4769-b5be-9e7a58d50dc9",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"3ce5aa36-f93a-4769-b5be-9e7a58d50dc9"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Category",
+							"item": [
+								{
+									"name": "Get Categories",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/product/category",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Category",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"ABC\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/product/category",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Category",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Handphone and Accesories\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/product/category/cc9b24c5-8d8e-4d27-87a3-e0506fca1045",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"category",
+												"cc9b24c5-8d8e-4d27-87a3-e0506fca1045"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Category",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/product/category/410e9bb0-3571-425a-a15e-e6ddb82188bc",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"category",
+												"410e9bb0-3571-425a-a15e-e6ddb82188bc"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Tenant",
+					"item": [
+						{
+							"name": "Create Tenant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PT Aci Rezeki\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/tenant",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"tenant"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Tenant By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_MONO}}/api/tenant/47dd6b24-0b23-46b0-a662-776158d089ba",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"tenant",
+										"47dd6b24-0b23-46b0-a662-776158d089ba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Tenant",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\r\n    \"name\": \"PT Aci Rezeki - Updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/tenant/8949c5f9-d4a9-4795-bb8b-8ceae8d7df4b",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"tenant",
+										"8949c5f9-d4a9-4795-bb8b-8ceae8d7df4b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Tenant",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/tenant",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"tenant"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Cart",
+							"item": [
+								{
+									"name": "Add to Cart",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"product_id\": \"2505f08a-1350-4e2a-b1dd-1dec3765248b\",\r\n    \"quantity\": 2\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/cart",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Edit Cart",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"cart_id\": \"cc4d64ff-bc37-4196-aec3-8a742a12afba\",\r\n    \"quantity\": 3\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/cart",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Cart",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/cart",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Product from Cart",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"product_id\": \"2505f08a-1350-4e2a-b1dd-1dec3765248b\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/cart",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Order",
+							"item": [
+								{
+									"name": "Get Orders",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/order",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"order"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Orders By ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/order/d8e9d94b-fb14-41e9-a37d-d94b1cb2fb37",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"d8e9d94b-fb14-41e9-a37d-d94b1cb2fb37"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Place Order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"shipping_provider\": \"GOSEND\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/order",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"order"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pay Order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"payment_method\": \"GOPAY\",\r\n    \"payment_reference\": \"GOPAY-123\",\r\n    \"amount\": 48000000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/order/d8e9d94b-fb14-41e9-a37d-d94b1cb2fb37/pay",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"d8e9d94b-fb14-41e9-a37d-d94b1cb2fb37",
+												"pay"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cancel Order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{API_MONO}}/api/order/d8e9d94b-fb14-41e9-a37d-d94b1cb2fb37/cancel",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"d8e9d94b-fb14-41e9-a37d-d94b1cb2fb37",
+												"cancel"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Wishlist",
+					"item": [
+						{
+							"name": "Get Wishlist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_MONO}}/api/wishlist",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"wishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Wishlist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Lebaran 2025\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/wishlist",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"wishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Wishlist",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Lebaran 2025 - Updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/wishlist/334bdad3-0d39-4f5f-b827-96fd3bd42080",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"334bdad3-0d39-4f5f-b827-96fd3bd42080"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Wishlist",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_MONO}}/api/wishlist/334bdad3-0d39-4f5f-b827-96fd3bd42080",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"334bdad3-0d39-4f5f-b827-96fd3bd42080"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Wishlist Detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_MONO}}/api/wishlist/bb08be11-cead-49b5-b4ed-06ac356bfdb3",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"bb08be11-cead-49b5-b4ed-06ac356bfdb3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add to Wishlist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"wishlist_id\": \"bb08be11-cead-49b5-b4ed-06ac356bfdb3\",\r\n    \"product_id\": \"2505f08a-1350-4e2a-b1dd-1dec3765248b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/wishlist/add",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove from Wishlist",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"4aee34a8-42a3-42ef-9d81-a2b3dceef2c3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_MONO}}/api/wishlist/remove",
+									"host": [
+										"{{API_MONO}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"remove"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Microservice",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login Admin",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();\r",
+											"if (response[\"token\"]) {\r",
+											"    pm.collectionVariables.set(\"token\", response[\"token\"]);\r",
+											"    console.log(\"JWT Token saved as collection variable:\", response[\"token\"]);\r",
+											"} else {\r",
+											"    pm.test(\"JWT Token not found in response\", function () {\r",
+											"        pm.expect(response[\"token\"]).to.exist;\r",
+											"    });\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Admin123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_AUTH}}/api/login",
+									"host": [
+										"{{API_AUTH}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();\r",
+											"if (response[\"token\"]) {\r",
+											"    pm.collectionVariables.set(\"token\", response[\"token\"]);\r",
+											"    console.log(\"JWT Token saved as collection variable:\", response[\"token\"]);\r",
+											"} else {\r",
+											"    pm.test(\"JWT Token not found in response\", function () {\r",
+											"        pm.expect(response[\"token\"]).to.exist;\r",
+											"    });\r",
+											"}"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"elhamdi12\",\r\n    \"password\": \"Elhamdi12\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_AUTH}}/api/login",
+									"host": [
+										"{{API_AUTH}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"elhamdi12\",\r\n    \"email\": \"elhamdi12@gmail.com\",\r\n    \"password\": \"Elhamdi12\",\r\n    \"full_name\": \"Ilham Abdillah Alhamdi\",\r\n    \"address\": \"Blablabla\",\r\n    \"phone_number\": \"081234567890\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_AUTH}}/api/register",
+									"host": [
+										"{{API_AUTH}}"
+									],
+									"path": [
+										"api",
+										"register"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"elhamdi12\",\r\n    \"email\": \"elhamdi12@gmail.com\",\r\n    \"password\": \"Elhamdi12\",\r\n    \"full_name\": \"Ilham Abdillah Alhamdi\",\r\n    \"address\": \"Blablabla\",\r\n    \"phone_number\": \"081234567890\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_MONO}}/api/auth/register",
+											"host": [
+												"{{API_MONO}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "189"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"bd-Paxqyvvc6x0t7CvoEbpPldoMYMw\""
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 18 Feb 2025 06:29:05 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"e6c8e9a0-c188-4adb-9048-bc932866b404\",\n        \"username\": \"elhamdi12\",\n        \"email\": \"elhamdi12@gmail.com\",\n        \"full_name\": \"Ilham Abdillah Alhamdi\",\n        \"address\": \"Blablabla\",\n        \"phone_number\": \"081234567890\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Verify Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFiMDVlMmRkLWM0MTUtNDBlMS04ODNjLTAwYTlkNGM1YjliOCIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTc0MDA3MzQzNCwiZXhwIjoxNzQwMTU5ODM0fQ.Ix50tPNRqHpfUDLQcWj_FGxL1ySZ9TmmrYK1xT-OU1o\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_AUTH}}/api/verify-token",
+									"host": [
+										"{{API_AUTH}}"
+									],
+									"path": [
+										"api",
+										"verify-token"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Verify Admin Token",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFiMDVlMmRkLWM0MTUtNDBlMS04ODNjLTAwYTlkNGM1YjliOCIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTc0MDA3MzI3MywiZXhwIjoxNzQwMTU5NjczfQ.akxk9Ry61k3NHXA8NdU8cgUxyEjObjVae3ZNwzqHJtY\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_AUTH}}/api/verify-admin-token",
+									"host": [
+										"{{API_AUTH}}"
+									],
+									"path": [
+										"api",
+										"verify-admin-token"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tenant",
+					"item": [
+						{
+							"name": "Create Tenant",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"PT Aci Rezeki\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TENANT}}/api/tenant",
+									"host": [
+										"{{API_TENANT}}"
+									],
+									"path": [
+										"api",
+										"tenant"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Tenant By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_TENANT}}/api/tenant/47dd6b24-0b23-46b0-a662-776158d089ba",
+									"host": [
+										"{{API_TENANT}}"
+									],
+									"path": [
+										"api",
+										"tenant",
+										"47dd6b24-0b23-46b0-a662-776158d089ba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Tenant",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\r\n    \"name\": \"PT Pacil - Updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TENANT}}/api/tenant/47dd6b24-0b23-46b0-a662-776158d089ba",
+									"host": [
+										"{{API_TENANT}}"
+									],
+									"path": [
+										"api",
+										"tenant",
+										"47dd6b24-0b23-46b0-a662-776158d089ba"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Tenant",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_TENANT}}/api/tenant",
+									"host": [
+										"{{API_TENANT}}"
+									],
+									"path": [
+										"api",
+										"tenant"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"item": [
+						{
+							"name": "Product",
+							"item": [
+								{
+									"name": "Get Products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/product/",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"product",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Product By Id",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/product/e6c8e9a0-c188-4adb-9048-bc932866b404",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"e6c8e9a0-c188-4adb-9048-bc932866b404"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Products By Category",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/product/category/88fbc258-4adb-4349-bb59-33bd6f6f5586",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"category",
+												"88fbc258-4adb-4349-bb59-33bd6f6f5586"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Product By Ids",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"productIds\": [\"e6c8e9a0-c188-4adb-9048-bc932866b404\"]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/product/many",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"many"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Product",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24 with 12 RAM\",\r\n    \"price\": 24000000,\r\n    \"quantity_available\": 134,\r\n    \"category_id\": \"88fbc258-4adb-4349-bb59-33bd6f6f5586\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/product",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"product"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Product",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24\",\r\n    \"price\": 24000000,\r\n    \"quantity_available\": 134,\r\n    \"category_id\": \"88fbc258-4adb-4349-bb59-33bd6f6f5586\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/product/fe533928-d4a9-4a7b-990e-c269a97246db",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"fe533928-d4a9-4a7b-990e-c269a97246db"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Product",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/product/fe533928-d4a9-4a7b-990e-c269a97246db",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"product",
+												"fe533928-d4a9-4a7b-990e-c269a97246db"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Category",
+							"item": [
+								{
+									"name": "Get Categories",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/category",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Create Category",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Handphone & Accesories\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/category",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"category"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Category",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Handphone\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/category/67568d6d-584a-415d-b0f0-c3ae7e63698c",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"67568d6d-584a-415d-b0f0-c3ae7e63698c"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Category",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{API_PRODUCT}}/api/category/67568d6d-584a-415d-b0f0-c3ae7e63698c",
+											"host": [
+												"{{API_PRODUCT}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"67568d6d-584a-415d-b0f0-c3ae7e63698c"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Cart",
+							"item": [
+								{
+									"name": "Add to Cart",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"product_id\": \"eb0b74ed-f517-4bc9-b01c-42c0098dfa05\",\r\n    \"quantity\": 2\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_ORDER}}/api/cart",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Edit Cart",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"cart_id\": \"1cf05aed-27bd-40f8-b80c-08c42fa36093\",\r\n    \"quantity\": 3\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_ORDER}}/api/cart",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Cart",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_ORDER}}/api/cart",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete Product from Cart",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"product_id\": \"eb0b74ed-f517-4bc9-b01c-42c0098dfa05\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_ORDER}}/api/cart",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"cart"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Order",
+							"item": [
+								{
+									"name": "Get Orders",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_ORDER}}/api/order",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"order"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Get Orders By ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_ORDER}}/api/order/ade9d512-2e00-489c-a36b-bf33e748afa8",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"ade9d512-2e00-489c-a36b-bf33e748afa8"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Place Order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"shipping_provider\": \"GOSEND\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_ORDER}}/api/order",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"order"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Pay Order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"payment_method\": \"GOPAY\",\r\n    \"payment_reference\": \"GOPAY-123\",\r\n    \"amount\": 48000000\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_ORDER}}/api/order/ade9d512-2e00-489c-a36b-bf33e748afa8/pay",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"ade9d512-2e00-489c-a36b-bf33e748afa8",
+												"pay"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cancel Order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{API_ORDER}}/api/order/ade9d512-2e00-489c-a36b-bf33e748afa8/cancel",
+											"host": [
+												"{{API_ORDER}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"ade9d512-2e00-489c-a36b-bf33e748afa8",
+												"cancel"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Wishlist",
+					"item": [
+						{
+							"name": "Get Wishlist",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_WISHLIST}}/api/wishlist",
+									"host": [
+										"{{API_WISHLIST}}"
+									],
+									"path": [
+										"api",
+										"wishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Wishlist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Lebaran 2025\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_WISHLIST}}/api/wishlist",
+									"host": [
+										"{{API_WISHLIST}}"
+									],
+									"path": [
+										"api",
+										"wishlist"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Wishlist",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Lebaran 2025 - Updated\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_WISHLIST}}/api/wishlist/967e17a4-6d2d-48b6-a5c1-0225e2ca3e1a",
+									"host": [
+										"{{API_WISHLIST}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"967e17a4-6d2d-48b6-a5c1-0225e2ca3e1a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Wishlist",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{API_WISHLIST}}/api/wishlist/967e17a4-6d2d-48b6-a5c1-0225e2ca3e1a",
+									"host": [
+										"{{API_WISHLIST}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"967e17a4-6d2d-48b6-a5c1-0225e2ca3e1a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Wishlist Detail",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API_WISHLIST}}/api/wishlist/2c4bba00-35dd-45db-943f-7728524c3b2b",
+									"host": [
+										"{{API_WISHLIST}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"2c4bba00-35dd-45db-943f-7728524c3b2b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Add to Wishlist",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"wishlist_id\": \"2c4bba00-35dd-45db-943f-7728524c3b2b\",\r\n    \"product_id\": \"eb0b74ed-f517-4bc9-b01c-42c0098dfa05\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_WISHLIST}}/api/wishlist/add",
+									"host": [
+										"{{API_WISHLIST}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"add"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Remove from Wishlist",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": \"6b9cb785-e658-4333-8954-e56db35eac1e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API_WISHLIST}}/api/wishlist/remove",
+									"host": [
+										"{{API_WISHLIST}}"
+									],
+									"path": [
+										"api",
+										"wishlist",
+										"remove"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_MONO",
+			"value": "http://localhost:8888",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": ""
+		},
+		{
+			"key": "API_AUTH",
+			"value": "http://localhost:8001",
+			"type": "string"
+		},
+		{
+			"key": "API_PRODUCT",
+			"value": "http://localhost:8002",
+			"type": "string"
+		},
+		{
+			"key": "API_TENANT",
+			"value": "http://localhost:8003",
+			"type": "string"
+		},
+		{
+			"key": "API_ORDER",
+			"value": "http://localhost:8004",
+			"type": "string"
+		},
+		{
+			"key": "API_WISHLIST",
+			"value": "http://localhost:8005",
+			"type": "string"
+		}
+	]
+}
