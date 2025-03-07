@@ -178,6 +178,13 @@ pnpm run migrate
 ---
 
 
+# Workload Test
+
+## Traces Dataset
+
+This workload test is obtained from [Alibaba Distributed Traces (2022)](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/T53HGF) (partition_id=-10)
+
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
