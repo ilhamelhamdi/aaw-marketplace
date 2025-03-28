@@ -1,13 +1,17 @@
-FROM node:23 AS builder
+FROM node:23-alpine AS builder
 
 WORKDIR /marketplace
 
-COPY package.json ./
+# Add Alpine build dependencies
+RUN apk add --no-cache python3 make g++
 
 # Install pnpm
-RUN npm install -g pnpm typescript
+RUN npm install -g pnpm
 
-# Install dependencies
+# Copy only lockfile and package info first (better layer caching)
+COPY package.json pnpm-lock.yaml ./
+
+# Install all dependencies
 RUN pnpm install
 
 # Copy source
@@ -16,21 +20,28 @@ COPY . .
 # Build
 RUN pnpm run build
 
-# Production image
+# Production stage
 FROM node:23-alpine
 
-ENV PORT 8000
 ENV NODE_ENV production
+ENV PORT 8000
 
 WORKDIR /marketplace
 
+# Install pnpm
+RUN npm install -g pnpm
+
+# Copy only needed files from builder
 COPY --from=builder /marketplace/dist ./dist
 COPY --from=builder /marketplace/package.json ./package.json
-COPY --from=builder /marketplace/drizzle ./drizzle 
+COPY --from=builder /marketplace/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=builder /marketplace/drizzle ./drizzle
 COPY --from=builder /marketplace/entrypoint.sh ./entrypoint.sh
 
-RUN npm install -g pnpm
-RUN pnpm install --prod
+# Install only production dependencies
+RUN pnpm install --prod --frozen-lockfile \
+  && pnpm store prune \
+  && rm -rf ~/.cache ~/.npm
 
 # Make the entrypoint script executable
 RUN chmod +x ./entrypoint.sh

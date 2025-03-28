@@ -4,6 +4,7 @@ services:
   # Authentication Service
   auth-service:
     build: ./authentication
+    image: ilhamelhamdi/aaw-auth-service:latest
     ports:
       - "8001:8000"
     env_file: .env
@@ -37,6 +38,7 @@ services:
   # Product Service
   product-service:
     build: ./product
+    image: ilhamelhamdi/aaw-product-service:latest
     ports:
       - "8002:8000"
     env_file: .env
@@ -72,6 +74,7 @@ services:
   # Tenant Service
   tenant-service:
     build: ./tenant
+    image: ilhamelhamdi/aaw-tenant-service:latest
     ports:
       - "8003:8000"
     env_file: .env
@@ -106,6 +109,7 @@ services:
   # Orders Service
   orders-service:
     build: ./orders
+    image: ilhamelhamdi/aaw-orders-service:latest
     ports:
       - "8004:8000"
     env_file: .env
@@ -141,6 +145,7 @@ services:
   # Wishlist Service
   wishlist-service:
     build: ./wishlist
+    image: ilhamelhamdi/aaw-wishlist-service:latest
     ports:
       - "8005:8000"
     env_file: .env
