@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wishlist-config
+data:
+  DB_HOST: wishlist-db.default.svc.cluster.local
+  DB_PORT: "5432"
+  DB_NAME: wishlist_db

@@ -1,0 +1,62 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: api-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/auth
+        pathType: Prefix
+        backend:
+          service:
+            name: auth-service
+            port:
+              number: 80
+
+      - path: /api/order
+        pathType: Prefix
+        backend:
+          service:
+            name: orders-service
+            port:
+              number: 80
+      - path: /api/cart
+        pathType: Prefix
+        backend:
+          service:
+            name: orders-service
+            port:
+              number: 80
+
+      - path: /api/product
+        pathType: Prefix
+        backend:
+          service:
+            name: product-service
+            port:
+              number: 80
+      - path: /api/category
+        pathType: Prefix
+        backend:
+          service:
+            name: product-service
+            port:
+              number: 80
+
+      - path: /api/tenant
+        pathType: Prefix
+        backend:
+          service:
+            name: tenant-service
+            port:
+              number: 80
+
+      - path: /api/wishlist
+        pathType: Prefix
+        backend:
+          service:
+            name: wishlist-service
+            port:
+              number: 80
+

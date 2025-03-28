@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tenant-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: tenant
+  template:
+    metadata:
+      labels:
+        app: tenant
+    spec:
+      containers:
+      - name: tenant
+        image: ilhamelhamdi/aaw-tenant-service
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: tenant-config
+              key: DB_HOST
+        - name: DB_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: tenant-config
+              key: DB_PORT
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: tenant-config
+              key: DB_NAME
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: tenant-secret
+              key: DB_USER
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: tenant-secret
+              key: DB_PASSWORD
+        - name: TENANT_ID
+          valueFrom:
+            configMapKeyRef:
+              name: common-config
+              key: TENANT_ID
+        - name: ADMIN_TENANT_ID
+          valueFrom:
+            configMapKeyRef:
+              name: common-config
+              key: ADMIN_TENANT_ID
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: common-secret
+              key: JWT_SECRET
+        - name: AUTH_MS_URL
+          value: "http://auth-service:80"
