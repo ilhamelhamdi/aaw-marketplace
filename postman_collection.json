@@ -362,7 +362,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24 with 12 RAM\",\r\n    \"price\": 24000000,\r\n    \"quantity_available\": 134,\r\n    \"category_id\": \"cc9b24c5-8d8e-4d27-87a3-e0506fca1045\"\r\n}",
+											"raw": "{\r\n    \"name\": \"Iphone 15\",\r\n    \"description\": \"Iphone 15 with 12 RAM\",\r\n    \"price\": 24000000,\r\n    \"quantity_available\": 134,\r\n    \"category_id\": \"1b32546c-6910-44af-9e18-c9f3ac63024c\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -460,7 +460,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"ABC\"\r\n}",
+											"raw": "{\r\n    \"name\": \"Handphone\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -598,14 +598,14 @@
 									}
 								},
 								"url": {
-									"raw": "{{API_MONO}}/api/tenant/8949c5f9-d4a9-4795-bb8b-8ceae8d7df4b",
+									"raw": "{{API_MONO}}/api/tenant/0356014e-9a1e-4535-9b46-51b9b3c43763",
 									"host": [
 										"{{API_MONO}}"
 									],
 									"path": [
 										"api",
 										"tenant",
-										"8949c5f9-d4a9-4795-bb8b-8ceae8d7df4b"
+										"0356014e-9a1e-4535-9b46-51b9b3c43763"
 									]
 								}
 							},
@@ -1092,7 +1092,73 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Login Admin",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"Admin123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_AUTH}}/api/login",
+											"host": [
+												"{{API_AUTH}}"
+											],
+											"path": [
+												"api",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "267"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"10b-TgzHXTJtuDhbgPLITADK9h4X4f8\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:46:23 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExZGVhNzM0LTZjYjktNGQ5Ny1hZjRhLWM2YTVmMTUyZWU2NiIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTc0MzE0MDc4MywiZXhwIjoxNzQzMjI3MTgzfQ.Hb5ZxSr-7Hv2nmAP8jKhSLZD0h2xNNjLr0b-f1aHRLM\"\n}"
+								}
+							]
 						},
 						{
 							"name": "Login User",
@@ -1121,7 +1187,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"elhamdi12\",\r\n    \"password\": \"Elhamdi12\"\r\n}",
+									"raw": "{\r\n    \"username\": \"user1\",\r\n    \"password\": \"UserUser1\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1214,7 +1280,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\": \"elhamdi12\",\r\n    \"email\": \"elhamdi12@gmail.com\",\r\n    \"password\": \"Elhamdi12\",\r\n    \"full_name\": \"Ilham Abdillah Alhamdi\",\r\n    \"address\": \"Blablabla\",\r\n    \"phone_number\": \"081234567890\"\r\n}",
+									"raw": "{\r\n    \"username\": \"user2\",\r\n    \"email\": \"user2@gmail.com\",\r\n    \"password\": \"useruser2\",\r\n    \"full_name\": \"User2\",\r\n    \"address\": \"Blablabla\",\r\n    \"phone_number\": \"081234567890\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1308,7 +1374,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkYmFmNWQ5LWI3NTAtNDBlNC1iYTIxLWViZmQ5MTEwMWY3MyIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTc0MDA3ODY5NywiZXhwIjoxNzQwMTY1MDk3fQ.kqpR1ToQ-urSEq_QiGnebzDLVXRIXl2T0HUtffI_BoU\"\r\n}",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBhNGYwMDliLTM3YWUtNGRhZS04NzIwLWQwNTQ2YjQwNjZmMyIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTc0MzE0MDc5OSwiZXhwIjoxNzQzMjI3MTk5fQ.zwihgO2xhmSfGOrvG5Mex3s7ukt9QZwa3Ddd0d5rGBw\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1326,7 +1392,73 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Verify Token",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBhNGYwMDliLTM3YWUtNGRhZS04NzIwLWQwNTQ2YjQwNjZmMyIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTc0MzE0MDc5OSwiZXhwIjoxNzQzMjI3MTk5fQ.zwihgO2xhmSfGOrvG5Mex3s7ukt9QZwa3Ddd0d5rGB\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_AUTH}}/api/verify-token",
+											"host": [
+												"{{API_AUTH}}"
+											],
+											"path": [
+												"api",
+												"verify-token"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "172"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"ac-3EElRlYtVni9DXnZKjaCxzKw3CI\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:46:48 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"user\": {\n        \"id\": \"0a4f009b-37ae-4dae-8720-d0546b4066f3\",\n        \"username\": \"user1\",\n        \"email\": \"user10@gmail.com\",\n        \"full_name\": \"User1\",\n        \"address\": \"Blablabla\",\n        \"phone_number\": \"081234567890\"\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "Verify Admin Token",
@@ -1335,7 +1467,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFiMDVlMmRkLWM0MTUtNDBlMS04ODNjLTAwYTlkNGM1YjliOCIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTc0MDA3MzI3MywiZXhwIjoxNzQwMTU5NjczfQ.akxk9Ry61k3NHXA8NdU8cgUxyEjObjVae3ZNwzqHJtY\"\r\n}",
+									"raw": "{\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExZGVhNzM0LTZjYjktNGQ5Ny1hZjRhLWM2YTVmMTUyZWU2NiIsInRlbmFudF9pZCI6IjQ3ZGQ2YjI0LTBiMjMtNDZiMC1hNjYyLTc3NjE1OGQwODliYSIsImlhdCI6MTc0MzE0MDg1NywiZXhwIjoxNzQzMjI3MjU3fQ.3GoWyOSHQ6KFrHODTzIg_1AJFhUFYfbPCxeBgB43Yc8\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1402,7 +1534,73 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Create Tenant",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"PT Nusantara Gemilang\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_TENANT}}/api/tenant",
+											"host": [
+												"{{API_TENANT}}"
+											],
+											"path": [
+												"api",
+												"tenant"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "251"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fb-I9Mp3H7tCdEE8sUgow+fzlaDPLk\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:47:55 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"tenants\": {\n        \"id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\n        \"owner_id\": \"11dea734-6cb9-4d97-af4a-c6a5f152ee66\"\n    },\n    \"tenantDetails\": {\n        \"id\": \"8d339772-a3c0-4fcc-a16d-f76787a44eab\",\n        \"tenant_id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\n        \"name\": \"PT Nusantara Gemilang\"\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "Get Tenant By Id",
@@ -1410,18 +1608,76 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{API_TENANT}}/api/tenant/47dd6b24-0b23-46b0-a662-776158d089ba",
+									"raw": "{{API_TENANT}}/api/tenant/8c2e31c8-aa7f-454d-9976-5c43df505480",
 									"host": [
 										"{{API_TENANT}}"
 									],
 									"path": [
 										"api",
 										"tenant",
-										"47dd6b24-0b23-46b0-a662-776158d089ba"
+										"8c2e31c8-aa7f-454d-9976-5c43df505480"
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Get Tenant By Id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_TENANT}}/api/tenant/8c2e31c8-aa7f-454d-9976-5c43df505480",
+											"host": [
+												"{{API_TENANT}}"
+											],
+											"path": [
+												"api",
+												"tenant",
+												"8c2e31c8-aa7f-454d-9976-5c43df505480"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "251"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"fb-I9Mp3H7tCdEE8sUgow+fzlaDPLk\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:48:11 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"tenants\": {\n        \"id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\n        \"owner_id\": \"11dea734-6cb9-4d97-af4a-c6a5f152ee66\"\n    },\n    \"tenantDetails\": {\n        \"id\": \"8d339772-a3c0-4fcc-a16d-f76787a44eab\",\n        \"tenant_id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\n        \"name\": \"PT Nusantara Gemilang\"\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "Update Tenant",
@@ -1430,7 +1686,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\r\n    \"name\": \"PT Nusantara Gemilang - Updated\"\r\n}",
+									"raw": "{\r\n    \"tenant_id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\r\n    \"name\": \"PT Nusantara Gemilang - Updated\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1438,18 +1694,151 @@
 									}
 								},
 								"url": {
-									"raw": "{{API_TENANT}}/api/tenant/47dd6b24-0b23-46b0-a662-776158d089ba",
+									"raw": "{{API_TENANT}}/api/tenant/8c2e31c8-aa7f-454d-9976-5c43df505480",
 									"host": [
 										"{{API_TENANT}}"
 									],
 									"path": [
 										"api",
 										"tenant",
-										"47dd6b24-0b23-46b0-a662-776158d089ba"
+										"8c2e31c8-aa7f-454d-9976-5c43df505480"
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Update Tenant",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\r\n    \"name\": \"PT Nusantara Gemilang - Updated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_TENANT}}/api/tenant/3a8d51f7-aad3-4269-b283-5a86a34ddc3b",
+											"host": [
+												"{{API_TENANT}}"
+											],
+											"path": [
+												"api",
+												"tenant",
+												"3a8d51f7-aad3-4269-b283-5a86a34ddc3b"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1e-GydRpPJp6MB8GDJYNVhWUDp3viw\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:48:21 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant not found\"\n}"
+								},
+								{
+									"name": "Update Tenant",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"tenant_id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\r\n    \"name\": \"PT Nusantara Gemilang - Updated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_TENANT}}/api/tenant/8c2e31c8-aa7f-454d-9976-5c43df505480",
+											"host": [
+												"{{API_TENANT}}"
+											],
+											"path": [
+												"api",
+												"tenant",
+												"8c2e31c8-aa7f-454d-9976-5c43df505480"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "260"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"104-rPeyYUoITiccNpTDuNLx4QCN1mg\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:48:46 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"tenant\": {\n        \"id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\n        \"owner_id\": \"11dea734-6cb9-4d97-af4a-c6a5f152ee66\"\n    },\n    \"tenantDetails\": {\n        \"id\": \"8d339772-a3c0-4fcc-a16d-f76787a44eab\",\n        \"tenant_id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\n        \"name\": \"PT Nusantara Gemilang - Updated\"\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "Delete Tenant",
@@ -1458,7 +1847,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"tenant_id\": \"6719c2ec-2b20-40da-baa0-e2e66d368338\"\r\n}",
+									"raw": "{\r\n    \"tenant_id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1476,7 +1865,138 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Delete Tenant",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"tenant_id\": \"6719c2ec-2b20-40da-baa0-e2e66d368338\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_TENANT}}/api/tenant",
+											"host": [
+												"{{API_TENANT}}"
+											],
+											"path": [
+												"api",
+												"tenant"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "30"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"1e-GydRpPJp6MB8GDJYNVhWUDp3viw\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:48:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Tenant not found\"\n}"
+								},
+								{
+									"name": "Delete Tenant",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"tenant_id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_TENANT}}/api/tenant",
+											"host": [
+												"{{API_TENANT}}"
+											],
+											"path": [
+												"api",
+												"tenant"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "261"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"105-3skEa3GmgpO5aoHZKVpxsfsuYE4\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:49:01 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"tenants\": {\n        \"id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\n        \"owner_id\": \"11dea734-6cb9-4d97-af4a-c6a5f152ee66\"\n    },\n    \"tenantDetails\": {\n        \"id\": \"8d339772-a3c0-4fcc-a16d-f76787a44eab\",\n        \"tenant_id\": \"8c2e31c8-aa7f-454d-9976-5c43df505480\",\n        \"name\": \"PT Nusantara Gemilang - Updated\"\n    }\n}"
+								}
+							]
 						}
 					]
 				},
@@ -1567,18 +2087,76 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{API_PRODUCT}}/api/product/e8b89a4e-d718-4a95-99d1-97fc0499b68e",
+											"raw": "{{API_PRODUCT}}/api/product/a55afb0f-2208-499d-abbb-452497e6301f",
 											"host": [
 												"{{API_PRODUCT}}"
 											],
 											"path": [
 												"api",
 												"product",
-												"e8b89a4e-d718-4a95-99d1-97fc0499b68e"
+												"a55afb0f-2208-499d-abbb-452497e6301f"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Get Product By Id",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/product/a55afb0f-2208-499d-abbb-452497e6301f",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"product",
+														"a55afb0f-2208-499d-abbb-452497e6301f"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "265"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"109-awLxRmHgU8TjDJ7sKTms1+Svn8M\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:49:25 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"a55afb0f-2208-499d-abbb-452497e6301f\",\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n    \"name\": \"Samsung Galaxy S24\",\n    \"description\": \"Samsung Galaxy S24 - Modified\",\n    \"price\": 24000000,\n    \"quantity_available\": 134,\n    \"category_id\": \"f0239dfe-142b-4337-b661-9fdc68f506ea\"\n}"
+										}
+									]
 								},
 								{
 									"name": "Get Products By Category",
@@ -1586,7 +2164,7 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{API_PRODUCT}}/api/product/category/c8690877-4238-4ee9-86c0-2d71d1ad5d13",
+											"raw": "{{API_PRODUCT}}/api/product/category/f0239dfe-142b-4337-b661-9fdc68f506ea",
 											"host": [
 												"{{API_PRODUCT}}"
 											],
@@ -1594,11 +2172,70 @@
 												"api",
 												"product",
 												"category",
-												"c8690877-4238-4ee9-86c0-2d71d1ad5d13"
+												"f0239dfe-142b-4337-b661-9fdc68f506ea"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Get Products By Category",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/product/category/f0239dfe-142b-4337-b661-9fdc68f506ea",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"product",
+														"category",
+														"f0239dfe-142b-4337-b661-9fdc68f506ea"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "280"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"118-NqHM/rmCx0oKMv39NPr6SGof97M\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:49:32 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"products\": [\n        {\n            \"id\": \"a55afb0f-2208-499d-abbb-452497e6301f\",\n            \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n            \"name\": \"Samsung Galaxy S24\",\n            \"description\": \"Samsung Galaxy S24 - Modified\",\n            \"price\": 24000000,\n            \"quantity_available\": 134,\n            \"category_id\": \"f0239dfe-142b-4337-b661-9fdc68f506ea\"\n        }\n    ]\n}"
+										}
+									]
 								},
 								{
 									"name": "Get Product By Ids",
@@ -1607,7 +2244,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"productIds\": [\"e8b89a4e-d718-4a95-99d1-97fc0499b68e\"]\r\n}",
+											"raw": "{\r\n    \"productIds\": [\"a55afb0f-2208-499d-abbb-452497e6301f\", \"731699d7-bf50-4177-8d42-1d28ae337c6c\"]\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1626,7 +2263,74 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Get Product By Ids",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"productIds\": [\"a55afb0f-2208-499d-abbb-452497e6301f\", \"731699d7-bf50-4177-8d42-1d28ae337c6c\"]\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/product/many",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"product",
+														"many"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "531"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"213-GeydD8sfy8B+Zbzd8mh2w4rjsk8\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:50:04 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "[\n    {\n        \"id\": \"731699d7-bf50-4177-8d42-1d28ae337c6c\",\n        \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n        \"name\": \"Baju Kemeja Pria Panjang\",\n        \"description\": \"Baju Kemeja Pria Panjang\",\n        \"price\": 200000,\n        \"quantity_available\": 50,\n        \"category_id\": \"d44c95d8-cb28-4ff3-a5f3-ea22f07bdacf\"\n    },\n    {\n        \"id\": \"a55afb0f-2208-499d-abbb-452497e6301f\",\n        \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n        \"name\": \"Samsung Galaxy S24\",\n        \"description\": \"Samsung Galaxy S24 - Modified\",\n        \"price\": 24000000,\n        \"quantity_available\": 134,\n        \"category_id\": \"f0239dfe-142b-4337-b661-9fdc68f506ea\"\n    }\n]"
+										}
+									]
 								},
 								{
 									"name": "Create Product",
@@ -1635,7 +2339,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24\",\r\n    \"price\": 18000000,\r\n    \"quantity_available\": 50,\r\n    \"category_id\": \"c8690877-4238-4ee9-86c0-2d71d1ad5d13\"\r\n}",
+											"raw": "{\r\n    \"name\": \"Baju Kemeja Pria Panjang\",\r\n    \"description\": \"Baju Kemeja Pria Panjang\",\r\n    \"price\": 200000,\r\n    \"quantity_available\": 50,\r\n    \"category_id\": \"d44c95d8-cb28-4ff3-a5f3-ea22f07bdacf\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1653,7 +2357,73 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Create Product",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"Baju Kemeja Pria Panjang\",\r\n    \"description\": \"Baju Kemeja Pria Panjang\",\r\n    \"price\": 200000,\r\n    \"quantity_available\": 50,\r\n    \"category_id\": \"d44c95d8-cb28-4ff3-a5f3-ea22f07bdacf\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/product",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"product"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "159"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"9f-xKr2teniieooeEE8ve+Ec4uej8A\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:50:21 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"fab09e01-0d31-4e02-a42b-68635d336053\",\n    \"name\": \"Baju Kemeja Pria Panjang\",\n    \"description\": \"Baju Kemeja Pria Panjang\",\n    \"price\": 200000,\n    \"quantity_available\": 50\n}"
+										}
+									]
 								},
 								{
 									"name": "Update Product",
@@ -1662,7 +2432,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24\",\r\n    \"price\": 24000000,\r\n    \"quantity_available\": 134,\r\n    \"category_id\": \"88fbc258-4adb-4349-bb59-33bd6f6f5586\"\r\n}",
+											"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24 - Modified\",\r\n    \"price\": 24000000,\r\n    \"quantity_availabl\": 130,\r\n    \"category_id\": \"f0239dfe-142b-4337-b661-9fdc68f506ea\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1670,18 +2440,85 @@
 											}
 										},
 										"url": {
-											"raw": "{{API_PRODUCT}}/api/product/fe533928-d4a9-4a7b-990e-c269a97246db",
+											"raw": "{{API_PRODUCT}}/api/product/a55afb0f-2208-499d-abbb-452497e6301f",
 											"host": [
 												"{{API_PRODUCT}}"
 											],
 											"path": [
 												"api",
 												"product",
-												"fe533928-d4a9-4a7b-990e-c269a97246db"
+												"a55afb0f-2208-499d-abbb-452497e6301f"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Update Product",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"Samsung Galaxy S24\",\r\n    \"description\": \"Samsung Galaxy S24 - Modified\",\r\n    \"price\": 24000000,\r\n    \"quantity_availabl\": 130,\r\n    \"category_id\": \"f0239dfe-142b-4337-b661-9fdc68f506ea\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/product/a55afb0f-2208-499d-abbb-452497e6301f",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"product",
+														"a55afb0f-2208-499d-abbb-452497e6301f"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "214"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"d6-YpGWhJ1LeNbCzWV/W0doGzK+I+0\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:50:31 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"a55afb0f-2208-499d-abbb-452497e6301f\",\n    \"name\": \"Samsung Galaxy S24\",\n    \"description\": \"Samsung Galaxy S24 - Modified\",\n    \"price\": 24000000,\n    \"quantity_available\": 134,\n    \"category_id\": \"f0239dfe-142b-4337-b661-9fdc68f506ea\"\n}"
+										}
+									]
 								},
 								{
 									"name": "Delete Product",
@@ -1689,18 +2526,76 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{API_PRODUCT}}/api/product/fe533928-d4a9-4a7b-990e-c269a97246db",
+											"raw": "{{API_PRODUCT}}/api/product/fab09e01-0d31-4e02-a42b-68635d336053",
 											"host": [
 												"{{API_PRODUCT}}"
 											],
 											"path": [
 												"api",
 												"product",
-												"fe533928-d4a9-4a7b-990e-c269a97246db"
+												"fab09e01-0d31-4e02-a42b-68635d336053"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Delete Product",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/product/fab09e01-0d31-4e02-a42b-68635d336053",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"product",
+														"fab09e01-0d31-4e02-a42b-68635d336053"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "263"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"107-j3YkYZJxV5j4g3pwDzlhQmPyhJo\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:50:45 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"fab09e01-0d31-4e02-a42b-68635d336053\",\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n    \"name\": \"Baju Kemeja Pria Panjang\",\n    \"description\": \"Baju Kemeja Pria Panjang\",\n    \"price\": 200000,\n    \"quantity_available\": 50,\n    \"category_id\": \"d44c95d8-cb28-4ff3-a5f3-ea22f07bdacf\"\n}"
+										}
+									]
 								}
 							]
 						},
@@ -1723,7 +2618,64 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Get Categories",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/category",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"category"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "246"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"f6-pEj75m4mY9Jxfku865OJmY5FYv0\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:51:00 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"categories\": [\n        {\n            \"id\": \"f0239dfe-142b-4337-b661-9fdc68f506ea\",\n            \"name\": \"Handphone\",\n            \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\"\n        },\n        {\n            \"id\": \"d44c95d8-cb28-4ff3-a5f3-ea22f07bdacf\",\n            \"name\": \"Fashion\",\n            \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\"\n        }\n    ]\n}"
+										}
+									]
 								},
 								{
 									"name": "Create Category",
@@ -1732,7 +2684,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Handphone\"\r\n}",
+											"raw": "{\r\n    \"name\": \"Otomotif\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1750,7 +2702,73 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Create Category",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"Otomotif\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/category",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"category"
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "63"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3f-2AQNB3eRREFqV8N2yxRQODZ30jo\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:51:11 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"286674f3-76ca-4fbc-95e0-71922dd704f7\",\n    \"name\": \"Otomotif\"\n}"
+										}
+									]
 								},
 								{
 									"name": "Update Category",
@@ -1759,7 +2777,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"name\": \"Handphone\"\r\n}",
+											"raw": "{\r\n    \"name\": \"Otomotif & Aksesoris\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1767,18 +2785,85 @@
 											}
 										},
 										"url": {
-											"raw": "{{API_PRODUCT}}/api/category/67568d6d-584a-415d-b0f0-c3ae7e63698c",
+											"raw": "{{API_PRODUCT}}/api/category/286674f3-76ca-4fbc-95e0-71922dd704f7",
 											"host": [
 												"{{API_PRODUCT}}"
 											],
 											"path": [
 												"api",
 												"category",
-												"67568d6d-584a-415d-b0f0-c3ae7e63698c"
+												"286674f3-76ca-4fbc-95e0-71922dd704f7"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Update Category",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"Otomotif & Aksesoris\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/category/286674f3-76ca-4fbc-95e0-71922dd704f7",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"category",
+														"286674f3-76ca-4fbc-95e0-71922dd704f7"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "75"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"4b-Sltt+m03hzYeBgrBcpmDTt8JjSg\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:51:40 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"286674f3-76ca-4fbc-95e0-71922dd704f7\",\n    \"name\": \"Otomotif & Aksesoris\"\n}"
+										}
+									]
 								},
 								{
 									"name": "Delete Category",
@@ -1786,18 +2871,76 @@
 										"method": "DELETE",
 										"header": [],
 										"url": {
-											"raw": "{{API_PRODUCT}}/api/category/67568d6d-584a-415d-b0f0-c3ae7e63698c",
+											"raw": "{{API_PRODUCT}}/api/category/286674f3-76ca-4fbc-95e0-71922dd704f7",
 											"host": [
 												"{{API_PRODUCT}}"
 											],
 											"path": [
 												"api",
 												"category",
-												"67568d6d-584a-415d-b0f0-c3ae7e63698c"
+												"286674f3-76ca-4fbc-95e0-71922dd704f7"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Delete Category",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{API_PRODUCT}}/api/category/286674f3-76ca-4fbc-95e0-71922dd704f7",
+													"host": [
+														"{{API_PRODUCT}}"
+													],
+													"path": [
+														"api",
+														"category",
+														"286674f3-76ca-4fbc-95e0-71922dd704f7"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "126"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"7e-Nrg4jz1Z8IjTN+8Db07imjjmmSE\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:51:48 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"286674f3-76ca-4fbc-95e0-71922dd704f7\",\n    \"name\": \"Otomotif & Aksesoris\",\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\"\n}"
+										}
+									]
 								}
 							]
 						}
@@ -1816,7 +2959,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"product_id\": \"2c3e45aa-b430-4569-a153-5b618f908a20\",\r\n    \"quantity\": 1\r\n}",
+											"raw": "{\r\n    \"product_id\": \"bf8e776f-7cac-43cd-bd08-2c9280b30218\",\r\n    \"quantity\": 2\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1909,7 +3052,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"cart_id\": \"1cf05aed-27bd-40f8-b80c-08c42fa36093\",\r\n    \"quantity\": 3\r\n}",
+											"raw": "{\r\n    \"cart_id\": \"59e27a7b-913b-4de4-ade4-c7c416cbfb99\",\r\n    \"quantity\": 1\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -1927,7 +3070,73 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Edit Cart",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"cart_id\": \"59e27a7b-913b-4de4-ade4-c7c416cbfb99\",\r\n    \"quantity\": 1\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_ORDER}}/api/cart",
+													"host": [
+														"{{API_ORDER}}"
+													],
+													"path": [
+														"api",
+														"cart"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "110"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"6e-SUe99CGfC0IQAE1+mw0la0OQHIk\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:53:11 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"59e27a7b-913b-4de4-ade4-c7c416cbfb99\",\n    \"product_id\": \"c876705d-6e15-43ea-be65-ec58d123e8c1\",\n    \"quantity\": 1\n}"
+										}
+									]
 								},
 								{
 									"name": "Get Cart",
@@ -2011,7 +3220,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"product_id\": \"eb0b74ed-f517-4bc9-b01c-42c0098dfa05\"\r\n}",
+											"raw": "{\r\n    \"product_id\": \"c876705d-6e15-43ea-be65-ec58d123e8c1\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2029,7 +3238,73 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Delete Product from Cart",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"product_id\": \"c876705d-6e15-43ea-be65-ec58d123e8c1\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_ORDER}}/api/cart",
+													"host": [
+														"{{API_ORDER}}"
+													],
+													"path": [
+														"api",
+														"cart"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "110"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"6e-SUe99CGfC0IQAE1+mw0la0OQHIk\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:53:30 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"59e27a7b-913b-4de4-ade4-c7c416cbfb99\",\n    \"product_id\": \"c876705d-6e15-43ea-be65-ec58d123e8c1\",\n    \"quantity\": 1\n}"
+										}
+									]
 								}
 							]
 						},
@@ -2117,18 +3392,76 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{API_ORDER}}/api/order/20792a0c-7988-42ef-9817-895236df73bc",
+											"raw": "{{API_ORDER}}/api/order/0ba6bd93-7f13-45fe-a73d-fe579c4cf57e",
 											"host": [
 												"{{API_ORDER}}"
 											],
 											"path": [
 												"api",
 												"order",
-												"20792a0c-7988-42ef-9817-895236df73bc"
+												"0ba6bd93-7f13-45fe-a73d-fe579c4cf57e"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Get Orders By ID",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API_ORDER}}/api/order/0ba6bd93-7f13-45fe-a73d-fe579c4cf57e",
+													"host": [
+														"{{API_ORDER}}"
+													],
+													"path": [
+														"api",
+														"order",
+														"0ba6bd93-7f13-45fe-a73d-fe579c4cf57e"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "232"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"e8-UWMlOFZmF9qpSQpXg0R/72qOSqg\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:54:25 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"29f8543e-76da-42ee-9bc4-69496e3d2fde\",\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n    \"order_id\": \"0ba6bd93-7f13-45fe-a73d-fe579c4cf57e\",\n    \"product_id\": \"c876705d-6e15-43ea-be65-ec58d123e8c1\",\n    \"quantity\": 10,\n    \"unit_price\": 231000\n}"
+										}
+									]
 								},
 								{
 									"name": "Place Order",
@@ -2137,7 +3470,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"shipping_provider\": \"GRAB_EXPRESS\"\r\n}",
+											"raw": "{\r\n    \"shipping_provider\": \"GOSEND\"\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2295,7 +3628,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\r\n    \"payment_method\": \"OVO\",\r\n    \"payment_reference\": \"OVO-123\",\r\n    \"amount\": 18000000\r\n}",
+											"raw": "{\r\n    \"payment_method\": \"OVO\",\r\n    \"payment_reference\": \"OVO-123\",\r\n    \"amount\": 2798000\r\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -2303,19 +3636,154 @@
 											}
 										},
 										"url": {
-											"raw": "{{API_ORDER}}/api/order/20792a0c-7988-42ef-9817-895236df73bc/pay",
+											"raw": "{{API_ORDER}}/api/order/878e13a4-ba89-4375-aefe-0e6b5645e9f6/pay",
 											"host": [
 												"{{API_ORDER}}"
 											],
 											"path": [
 												"api",
 												"order",
-												"20792a0c-7988-42ef-9817-895236df73bc",
+												"878e13a4-ba89-4375-aefe-0e6b5645e9f6",
 												"pay"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Pay Order",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"payment_method\": \"OVO\",\r\n    \"payment_reference\": \"OVO-123\",\r\n    \"amount\": 1708000\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_ORDER}}/api/order/878e13a4-ba89-4375-aefe-0e6b5645e9f6/pay",
+													"host": [
+														"{{API_ORDER}}"
+													],
+													"path": [
+														"api",
+														"order",
+														"878e13a4-ba89-4375-aefe-0e6b5645e9f6",
+														"pay"
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "62"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"3e-BKEYJsn1yf20wuH5Dgy8PUPLX+w\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:56:05 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"message\": \"Payment amount does not match order total amount\"\n}"
+										},
+										{
+											"name": "Pay Order",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"payment_method\": \"OVO\",\r\n    \"payment_reference\": \"OVO-123\",\r\n    \"amount\": 2798000\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API_ORDER}}/api/order/878e13a4-ba89-4375-aefe-0e6b5645e9f6/pay",
+													"host": [
+														"{{API_ORDER}}"
+													],
+													"path": [
+														"api",
+														"order",
+														"878e13a4-ba89-4375-aefe-0e6b5645e9f6",
+														"pay"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "484"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"1e4-/8o0Wv/VO/ysXVm09E41o8Sb00g\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:57:55 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"payment\": {\n        \"id\": \"1547bf4e-8e03-4c22-955e-7cd53bcc0a1e\",\n        \"order_id\": \"878e13a4-ba89-4375-aefe-0e6b5645e9f6\",\n        \"payment_date\": \"2025-03-28T05:57:54.994Z\",\n        \"payment_method\": \"OVO\",\n        \"payment_reference\": \"OVO-123\",\n        \"amount\": 2798000\n    },\n    \"order\": {\n        \"id\": \"878e13a4-ba89-4375-aefe-0e6b5645e9f6\",\n        \"order_date\": \"2025-03-28T05:55:15.504Z\",\n        \"total_amount\": 2798000,\n        \"order_status\": \"PAID\",\n        \"shipping_provider\": \"GOSEND\",\n        \"shipping_code\": \"MOCK-SHIPPING-4cfd356e-ce5e-4f8a-bf6f-49c1bb9f1214\",\n        \"shipping_status\": \"PENDING\"\n    }\n}"
+										}
+									]
 								},
 								{
 									"name": "Cancel Order",
@@ -2323,19 +3791,78 @@
 										"method": "POST",
 										"header": [],
 										"url": {
-											"raw": "{{API_ORDER}}/api/order/20792a0c-7988-42ef-9817-895236df73bc/cancel",
+											"raw": "{{API_ORDER}}/api/order/0ba6bd93-7f13-45fe-a73d-fe579c4cf57e/cancel",
 											"host": [
 												"{{API_ORDER}}"
 											],
 											"path": [
 												"api",
 												"order",
-												"20792a0c-7988-42ef-9817-895236df73bc",
+												"0ba6bd93-7f13-45fe-a73d-fe579c4cf57e",
 												"cancel"
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"name": "Cancel Order",
+											"originalRequest": {
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{API_ORDER}}/api/order/0ba6bd93-7f13-45fe-a73d-fe579c4cf57e/cancel",
+													"host": [
+														"{{API_ORDER}}"
+													],
+													"path": [
+														"api",
+														"order",
+														"0ba6bd93-7f13-45fe-a73d-fe579c4cf57e",
+														"cancel"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "X-Powered-By",
+													"value": "Express"
+												},
+												{
+													"key": "Access-Control-Allow-Origin",
+													"value": "*"
+												},
+												{
+													"key": "Content-Type",
+													"value": "application/json; charset=utf-8"
+												},
+												{
+													"key": "Content-Length",
+													"value": "308"
+												},
+												{
+													"key": "ETag",
+													"value": "W/\"134-15HPjIKsNIYdapIExf4f9rthY8w\""
+												},
+												{
+													"key": "Date",
+													"value": "Fri, 28 Mar 2025 05:58:21 GMT"
+												},
+												{
+													"key": "Connection",
+													"value": "keep-alive"
+												},
+												{
+													"key": "Keep-Alive",
+													"value": "timeout=5"
+												}
+											],
+											"cookie": [],
+											"body": "{\n    \"id\": \"0ba6bd93-7f13-45fe-a73d-fe579c4cf57e\",\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n    \"user_id\": \"11dea734-6cb9-4d97-af4a-c6a5f152ee66\",\n    \"order_date\": \"2025-03-28T05:54:14.181Z\",\n    \"total_amount\": 2310000,\n    \"order_status\": \"CANCELLED\",\n    \"shipping_provider\": \"GOSEND\",\n    \"shipping_code\": null,\n    \"shipping_status\": null\n}"
+										}
+									]
 								}
 							]
 						}
@@ -2360,7 +3887,64 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Get Wishlist",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "169"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"a9-mqVeEFH7XajRmaOz0dTb8M7a+3c\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:59:10 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\n        \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n        \"user_id\": \"11dea734-6cb9-4d97-af4a-c6a5f152ee66\",\n        \"name\": \"Lebaran 2025\"\n    }\n]"
+								}
+							]
 						},
 						{
 							"name": "Create Wishlist",
@@ -2387,7 +3971,73 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Create Wishlist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Lebaran 2025\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "167"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"a7-+GsoaKqRWUWNuETJgm/pm1vuee0\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:59:00 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n    \"user_id\": \"11dea734-6cb9-4d97-af4a-c6a5f152ee66\",\n    \"name\": \"Lebaran 2025\"\n}"
+								}
+							]
 						},
 						{
 							"name": "Update Wishlist",
@@ -2404,18 +4054,85 @@
 									}
 								},
 								"url": {
-									"raw": "{{API_WISHLIST}}/api/wishlist/967e17a4-6d2d-48b6-a5c1-0225e2ca3e1a",
+									"raw": "{{API_WISHLIST}}/api/wishlist/d5fc43a3-19a1-40ed-acd1-51fcfe0e642c",
 									"host": [
 										"{{API_WISHLIST}}"
 									],
 									"path": [
 										"api",
 										"wishlist",
-										"967e17a4-6d2d-48b6-a5c1-0225e2ca3e1a"
+										"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c"
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Update Wishlist",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Lebaran 2025 - Updated\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/d5fc43a3-19a1-40ed-acd1-51fcfe0e642c",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "77"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"4d-9yGWjG7wjdeSGTaxpqw0rij/kEg\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:59:34 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\n    \"name\": \"Lebaran 2025 - Updated\"\n}"
+								}
+							]
 						},
 						{
 							"name": "Delete Wishlist",
@@ -2423,18 +4140,133 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{API_WISHLIST}}/api/wishlist/967e17a4-6d2d-48b6-a5c1-0225e2ca3e1a",
+									"raw": "{{API_WISHLIST}}/api/wishlist/d5fc43a3-19a1-40ed-acd1-51fcfe0e642c",
 									"host": [
 										"{{API_WISHLIST}}"
 									],
 									"path": [
 										"api",
 										"wishlist",
-										"967e17a4-6d2d-48b6-a5c1-0225e2ca3e1a"
+										"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c"
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Delete Wishlist",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/d5fc43a3-19a1-40ed-acd1-51fcfe0e642c",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "177"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b1-s1SOxF/XxtU67zxu4qmunfRXqpk\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 06:02:50 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\n    \"tenant_id\": \"47dd6b24-0b23-46b0-a662-776158d089ba\",\n    \"user_id\": \"11dea734-6cb9-4d97-af4a-c6a5f152ee66\",\n    \"name\": \"Lebaran 2025 - Updated\"\n}"
+								},
+								{
+									"name": "Delete Wishlist",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/d5fc43a3-19a1-40ed-acd1-51fcfe0e642c",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "32"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"20-kJjZbN5Qbv3lwlZ7ZF72kd2+Bx4\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 06:03:02 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Wishlist not found\"\n}"
+								}
+							]
 						},
 						{
 							"name": "Get Wishlist Detail",
@@ -2442,18 +4274,133 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{API_WISHLIST}}/api/wishlist/c2737e65-840c-407a-b580-c4f9a4614be6",
+									"raw": "{{API_WISHLIST}}/api/wishlist/d5fc43a3-19a1-40ed-acd1-51fcfe0e642c",
 									"host": [
 										"{{API_WISHLIST}}"
 									],
 									"path": [
 										"api",
 										"wishlist",
-										"c2737e65-840c-407a-b580-c4f9a4614be6"
+										"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c"
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Get Wishlist Detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/c2737e65-840c-407a-b580-c4f9a4614be6",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"c2737e65-840c-407a-b580-c4f9a4614be6"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "32"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"20-kJjZbN5Qbv3lwlZ7ZF72kd2+Bx4\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 05:59:59 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Wishlist not found\"\n}"
+								},
+								{
+									"name": "Get Wishlist Detail",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/d5fc43a3-19a1-40ed-acd1-51fcfe0e642c",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "152"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"98-zGGs8MPChRV3E0EoJkJ/BB99XoQ\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 06:01:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"8ef72de9-9bd5-48b6-8ab1-d8a85f0ceb79\",\n        \"wishlist_id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\n        \"product_id\": \"2c3e45aa-b430-4569-a153-5b618f908a20\"\n    }\n]"
+								}
+							]
 						},
 						{
 							"name": "Add to Wishlist",
@@ -2462,7 +4409,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"wishlist_id\": \"c2737e65-840c-407a-b580-c4f9a4614be6\",\r\n    \"product_id\": \"2c3e45aa-b430-4569-a153-5b618f908a20\"\r\n}",
+									"raw": "{\r\n    \"wishlist_id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\r\n    \"product_id\": \"2c3e45aa-b430-4569-a153-5b618f908a20\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2481,7 +4428,140 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Add to Wishlist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"wishlist_id\": \"c2737e65-840c-407a-b580-c4f9a4614be6\",\r\n    \"product_id\": \"2c3e45aa-b430-4569-a153-5b618f908a20\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/add",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"add"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "32"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"20-kJjZbN5Qbv3lwlZ7ZF72kd2+Bx4\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 06:00:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Wishlist not found\"\n}"
+								},
+								{
+									"name": "Add to Wishlist",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"wishlist_id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\r\n    \"product_id\": \"2c3e45aa-b430-4569-a153-5b618f908a20\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/add",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"add"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "150"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"96-WiRIHzV03ozN4Y+xGtW1+/njB3w\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 06:00:43 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"8ef72de9-9bd5-48b6-8ab1-d8a85f0ceb79\",\n    \"wishlist_id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\n    \"product_id\": \"2c3e45aa-b430-4569-a153-5b618f908a20\"\n}"
+								}
+							]
 						},
 						{
 							"name": "Remove from Wishlist",
@@ -2490,7 +4570,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": \"6b9cb785-e658-4333-8954-e56db35eac1e\"\r\n}",
+									"raw": "{\r\n    \"id\": \"8ef72de9-9bd5-48b6-8ab1-d8a85f0ceb79\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -2509,7 +4589,140 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Remove from Wishlist",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"6b9cb785-e658-4333-8954-e56db35eac1e\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/remove",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"remove"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "39"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"27-0LYx/tGcseC23328SUG+Nij9/Zg\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 06:01:23 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Wishlist detail not found\"\n}"
+								},
+								{
+									"name": "Remove from Wishlist",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"8ef72de9-9bd5-48b6-8ab1-d8a85f0ceb79\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API_WISHLIST}}/api/wishlist/remove",
+											"host": [
+												"{{API_WISHLIST}}"
+											],
+											"path": [
+												"api",
+												"wishlist",
+												"remove"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "150"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"96-WiRIHzV03ozN4Y+xGtW1+/njB3w\""
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 28 Mar 2025 06:02:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"8ef72de9-9bd5-48b6-8ab1-d8a85f0ceb79\",\n    \"wishlist_id\": \"d5fc43a3-19a1-40ed-acd1-51fcfe0e642c\",\n    \"product_id\": \"2c3e45aa-b430-4569-a153-5b618f908a20\"\n}"
+								}
+							]
 						}
 					]
 				}

@@ -1,0 +1,888 @@
+openapi: 3.0.0
+info:
+  title: API Documentation (v2)
+  version: "2.0"
+servers:
+- url: https://virtserver.swaggerhub.com/elhamdi/aaw-marketplace/2.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /v2/auth/login:
+    post:
+      tags:
+      - Authentication
+      summary: Login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/auth_login_body'
+        required: true
+      responses:
+        "200":
+          description: Token returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+              example:
+                token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        "400":
+          description: Invalid request body
+        "401":
+          description: Invalid credentials (incorrect username or password)
+        "500":
+          description: Internal server error
+  /v2/auth/register:
+    post:
+      tags:
+      - Authentication
+      summary: Register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/auth_register_body'
+        required: true
+      responses:
+        "201":
+          description: User created
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/inline_response_201'
+              example:
+              - id: e6c8e9a0-c188-4adb-9048-bc932866b404
+                username: elhamdi12
+                email: elhamdi12@gmail.com
+                full_name: Ilham Abdillah Alhamdi
+                address: Blablabla
+                phone_number: "081234567890"
+        "400":
+          description: Invalid request
+        "409":
+          description: Username/email already exists
+        "500":
+          description: Internal server error
+  /v2/auth/verify-token:
+    post:
+      tags:
+      - Authentication
+      summary: Verify Token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/auth_verifytoken_body'
+        required: true
+      responses:
+        "200":
+          description: Token valid (user data returned)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_1'
+              example:
+                user:
+                  id: 0a4f009b-37ae-4dae-8720-d0546b4066f3
+                  username: user1
+                  email: user10@gmail.com
+                  full_name: User1
+                  address: Blablabla
+                  phone_number: "081234567890"
+        "400":
+          description: Missing token in request
+        "401":
+          description: Invalid/expired token
+        "500":
+          description: Internal server error
+  /v2/auth/verify-admin-token:
+    post:
+      tags:
+      - Authentication
+      summary: Verify Admin Token
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/auth_verifyadmintoken_body'
+        required: true
+      responses:
+        "200":
+          description: Token valid (admin data returned)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200_2'
+              example:
+                user:
+                  id: e3f4a5eb-3315-413c-8dae-d488c8d6c4d
+                  username: admin
+                  email: admin@example.com
+                  full_name: Administrator
+                  role: admin
+        "400":
+          description: Missing token in request
+        "401":
+          description: Token invalid/expired or not admin
+        "500":
+          description: Internal server error
+  /v2/tenant:
+    post:
+      tags:
+      - Tenant
+      summary: Create Tenant
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "201":
+          description: Tenant created
+        "400":
+          description: Invalid request
+        "500":
+          description: Internal server error
+  /v2/tenant/{tenant_id}:
+    get:
+      tags:
+      - Tenant
+      summary: Get Tenant By Id
+      parameters:
+      - name: tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Tenant data
+        "404":
+          description: Tenant not found
+        "500":
+          description: Internal server error
+    put:
+      tags:
+      - Tenant
+      summary: Update Tenant
+      parameters:
+      - name: tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "200":
+          description: Tenant updated
+        "400":
+          description: Invalid request
+        "404":
+          description: Tenant not found
+        "500":
+          description: Internal server error
+    delete:
+      tags:
+      - Tenant
+      summary: Delete Tenant
+      parameters:
+      - name: tenant_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Tenant deleted
+        "400":
+          description: Invalid request
+        "404":
+          description: Tenant not found
+        "500":
+          description: Internal server error
+  /v2/product:
+    get:
+      tags:
+      - Product
+      summary: Get All Products
+      parameters:
+      - name: category_id
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        "200":
+          description: List of products
+        "400":
+          description: Invalid category_id format
+        "500":
+          description: Internal server error
+    post:
+      tags:
+      - Product
+      summary: Create Product
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "201":
+          description: Product created
+        "400":
+          description: Invalid request
+        "401":
+          description: Unauthorized (admin token required)
+        "500":
+          description: Internal server error
+  /v2/product/{product_id}:
+    get:
+      tags:
+      - Product
+      summary: Get Product By Id
+      parameters:
+      - name: product_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Product data
+        "400":
+          description: Invalid product_id format
+        "404":
+          description: Product not found
+        "500":
+          description: Internal server error
+    put:
+      tags:
+      - Product
+      summary: Update Product
+      parameters:
+      - name: product_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "200":
+          description: Product updated
+        "400":
+          description: "Invalid request (e.g., invalid category_id)"
+        "401":
+          description: Unauthorized (admin token required)
+        "404":
+          description: Product/category not found
+        "500":
+          description: Internal server error
+    delete:
+      tags:
+      - Product
+      summary: Delete Product
+      parameters:
+      - name: product_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Product deleted
+        "400":
+          description: Invalid product_id format
+        "401":
+          description: Unauthorized (admin token required)
+        "404":
+          description: Product not found
+        "500":
+          description: Internal server error
+  /v2/product/many:
+    post:
+      tags:
+      - Product
+      summary: Get Products By Ids
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product_many_body'
+        required: true
+      responses:
+        "200":
+          description: Products by IDs
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+              example: []
+        "400":
+          description: Invalid IDs format
+        "500":
+          description: Internal server error
+  /v2/category:
+    get:
+      tags:
+      - Category
+      summary: Get All Categories
+      responses:
+        "200":
+          description: List of categories
+        "500":
+          description: Internal server error
+    post:
+      tags:
+      - Category
+      summary: Create Category
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "201":
+          description: Category created
+        "400":
+          description: Invalid request
+        "401":
+          description: Unauthorized (admin token required)
+        "500":
+          description: Internal server error
+  /v2/category/{category_id}:
+    put:
+      tags:
+      - Category
+      summary: Update Category
+      parameters:
+      - name: category_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "200":
+          description: Category updated
+        "400":
+          description: Invalid request
+        "401":
+          description: Unauthorized (admin token required)
+        "404":
+          description: Category not found
+        "500":
+          description: Internal server error
+    delete:
+      tags:
+      - Category
+      summary: Delete Category
+      parameters:
+      - name: category_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Category deleted
+        "400":
+          description: Invalid category_id format
+        "401":
+          description: Unauthorized (admin token required)
+        "404":
+          description: Category not found
+        "500":
+          description: Internal server error
+  /v2/cart/items:
+    get:
+      tags:
+      - Cart
+      summary: Get Cart Items
+      responses:
+        "200":
+          description: List of cart items
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal server error
+    post:
+      tags:
+      - Cart
+      summary: Add to Cart
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cart_items_body'
+        required: true
+      responses:
+        "201":
+          description: Item added to cart
+        "400":
+          description: Invalid product_id or quantity
+        "401":
+          description: Unauthorized
+        "404":
+          description: Product not found
+        "500":
+          description: Internal server error
+  /v2/cart/items/{item_id}:
+    put:
+      tags:
+      - Cart
+      summary: Edit Cart Quantity
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/items_item_id_body'
+        required: true
+      responses:
+        "200":
+          description: Cart item updated
+        "400":
+          description: Invalid quantity
+        "401":
+          description: Unauthorized
+        "404":
+          description: Cart item not found
+        "500":
+          description: Internal server error
+    delete:
+      tags:
+      - Cart
+      summary: Delete Cart Item
+      parameters:
+      - name: item_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Cart item deleted
+        "401":
+          description: Unauthorized
+        "404":
+          description: Cart item not found
+        "500":
+          description: Internal server error
+  /v2/order:
+    post:
+      tags:
+      - Order
+      summary: Place Order
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "201":
+          description: Order placed
+        "400":
+          description: Invalid request or cart empty
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal server error
+  /v2/order/{order_id}:
+    get:
+      tags:
+      - Order
+      summary: Get Order By ID
+      parameters:
+      - name: order_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Order details
+        "404":
+          description: Order not found
+        "500":
+          description: Internal server error
+  /v2/order/{order_id}/cancel:
+    delete:
+      tags:
+      - Order
+      summary: Cancel Order
+      parameters:
+      - name: order_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Order canceled
+        "400":
+          description: Invalid request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Order not found
+        "500":
+          description: Internal server error
+  /v2/order/{order_id}/pay:
+    post:
+      tags:
+      - Order
+      summary: Pay Order
+      parameters:
+      - name: order_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/order_id_pay_body'
+        required: true
+      responses:
+        "200":
+          description: Order paid
+        "400":
+          description: Invalid payment amount or order not found
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal server error
+  /v2/wishlist:
+    get:
+      tags:
+      - Wishlist
+      summary: Get All Wishlists
+      responses:
+        "200":
+          description: List of wishlists
+        "500":
+          description: Internal server error
+    post:
+      tags:
+      - Wishlist
+      summary: Create Wishlist
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "201":
+          description: Wishlist created
+        "400":
+          description: Invalid request
+        "401":
+          description: Unauthorized
+        "500":
+          description: Internal server error
+  /v2/wishlist/{wishlist_id}:
+    get:
+      tags:
+      - Wishlist
+      summary: Get Wishlist Detail
+      parameters:
+      - name: wishlist_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Wishlist details
+        "401":
+          description: Unauthorized
+        "404":
+          description: Wishlist not found
+        "500":
+          description: Internal server error
+    put:
+      tags:
+      - Wishlist
+      summary: Update Wishlist
+      parameters:
+      - name: wishlist_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+        required: true
+      responses:
+        "200":
+          description: Wishlist updated
+        "400":
+          description: Invalid request
+        "401":
+          description: Unauthorized
+        "404":
+          description: Wishlist not found
+        "500":
+          description: Internal server error
+    delete:
+      tags:
+      - Wishlist
+      summary: Delete Wishlist
+      parameters:
+      - name: wishlist_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Wishlist deleted
+        "401":
+          description: Unauthorized
+        "404":
+          description: Wishlist not found
+        "500":
+          description: Internal server error
+  /v2/wishlist/{wishlist_id}/items:
+    post:
+      tags:
+      - Wishlist
+      summary: Add to Wishlist
+      parameters:
+      - name: wishlist_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/wishlist_id_items_body'
+        required: true
+      responses:
+        "201":
+          description: Item added to wishlist
+        "400":
+          description: Invalid product_id
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden (user not authorized)
+        "404":
+          description: Wishlist not found
+        "500":
+          description: Internal server error
+  /v2/wishlist/{wishlist_id}/items/{item_id}:
+    delete:
+      tags:
+      - Wishlist
+      summary: Remove from Wishlist
+      parameters:
+      - name: wishlist_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: item_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "204":
+          description: Wishlist item removed
+        "401":
+          description: Unauthorized
+        "404":
+          description: Wishlist not found
+        "500":
+          description: Internal server error
+components:
+  schemas:
+    auth_login_body:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+    inline_response_200:
+      type: object
+      properties:
+        token:
+          type: string
+    auth_register_body:
+      type: object
+      properties:
+        username:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+    inline_response_201:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        email:
+          type: string
+        full_name:
+          type: string
+        address:
+          type: string
+        phone_number:
+          type: string
+    auth_verifytoken_body:
+      type: object
+      properties:
+        token:
+          type: string
+    inline_response_200_1:
+      type: object
+      properties:
+        user:
+          type: object
+          properties:
+            id:
+              type: string
+            username:
+              type: string
+            email:
+              type: string
+            full_name:
+              type: string
+            address:
+              type: string
+            phone_number:
+              type: string
+    auth_verifyadmintoken_body:
+      type: object
+      properties:
+        token:
+          type: string
+    inline_response_200_2:
+      type: object
+      properties:
+        user:
+          type: object
+          properties:
+            id:
+              type: string
+            username:
+              type: string
+            email:
+              type: string
+            full_name:
+              type: string
+            role:
+              type: string
+    product_many_body:
+      type: object
+      properties:
+        productIds:
+          type: array
+          items:
+            type: string
+      example:
+        productIds:
+        - e6c8e9a0-c188-4adb-9048-bc932866b404
+    cart_items_body:
+      type: object
+      properties:
+        product_id:
+          type: string
+        quantity:
+          type: integer
+    items_item_id_body:
+      type: object
+      properties:
+        quantity:
+          type: integer
+    order_id_pay_body:
+      type: object
+      properties:
+        payment_amount:
+          type: number
+    wishlist_id_items_body:
+      type: object
+      properties:
+        product_id:
+          type: string
