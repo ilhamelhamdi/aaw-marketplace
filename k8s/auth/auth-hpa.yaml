@@ -10,14 +10,14 @@ spec:
     kind: Deployment
     name: auth-deployment
   minReplicas: 2
-  maxReplicas: 5
+  maxReplicas: 10
   metrics:
     - type: Resource
       resource:
         name: cpu
         target:
           type: Utilization
-          averageUtilization: 70
+          averageUtilization: 80
     - type: Resource
       resource:
         name: memory
