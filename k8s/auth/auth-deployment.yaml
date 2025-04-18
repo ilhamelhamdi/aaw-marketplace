@@ -19,6 +19,12 @@ spec:
         image: ilhamelhamdi/aaw-auth-service
         ports:
         - containerPort: 8000
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 5
         resources:
           requests:
             memory: "128Mi"
