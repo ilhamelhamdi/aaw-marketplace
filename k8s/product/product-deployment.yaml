@@ -12,6 +12,8 @@ spec:
       labels:
         app: product
     spec:
+      nodeSelector:
+        node-role.kubernetes.io/worker: worker
       containers:
       - name: product
         image: ilhamelhamdi/aaw-product-service

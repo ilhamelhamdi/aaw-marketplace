@@ -12,6 +12,8 @@ spec:
       labels:
         app: tenant
     spec:
+      nodeSelector:
+        node-role.kubernetes.io/worker: worker
       containers:
       - name: tenant
         image: ilhamelhamdi/aaw-tenant-service
