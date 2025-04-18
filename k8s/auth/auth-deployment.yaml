@@ -16,6 +16,36 @@ spec:
     spec:
       nodeSelector:
         node-role.kubernetes.io/worker: worker
+      initContainers:
+        - name: migrate
+          image: ilhamelhamdi/aaw-auth-service
+          command: ["sh", "-c", "until nc -z auth-db 5432; do echo waiting for db; sleep 2; done; node dist/src/db/migrate.js"]
+          env:
+            - name: DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: auth-config
+                  key: DB_HOST
+            - name: DB_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: auth-config
+                  key: DB_PORT
+            - name: DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: auth-config
+                  key: DB_NAME
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: auth-secret
+                  key: DB_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: auth-secret
+                  key: DB_PASSWORD
       containers:
       - name: auth
         image: ilhamelhamdi/aaw-auth-service
