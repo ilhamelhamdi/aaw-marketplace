@@ -12,6 +12,7 @@ spec:
       labels:
         app: orders
     spec:
+      dnsPolicy: ClusterFirst
       nodeSelector:
         node-role.kubernetes.io/worker: worker
       containers:
