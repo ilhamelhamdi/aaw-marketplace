@@ -2,7 +2,7 @@ import requests
 import concurrent.futures
 
 # Base URL for the API
-url = "http://localhost:8001/api/register"
+url = "http://ec2-184-72-146-176.compute-1.amazonaws.com/api/auth/register"
 
 # Function to generate user data
 def generate_user_data(user_id):
@@ -29,4 +29,4 @@ def register_user(user_id):
 
 # Use ThreadPoolExecutor to send requests concurrently
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-    executor.map(register_user, range(1000, 10001))
+    executor.map(register_user, range(1, 2001))
