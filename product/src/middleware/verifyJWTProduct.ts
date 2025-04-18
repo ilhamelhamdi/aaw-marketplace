@@ -4,7 +4,7 @@ import { User } from "@src/types/user";
 
 
 const verifyAdminTokenService = async (token: string) => {
-  const response = await fetch(`${process.env.AUTH_MS_URL}/api/verify-admin-token`, {
+  const response = await fetch(`${process.env.AUTH_MS_URL}/api/auth/verify-admin-token`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
